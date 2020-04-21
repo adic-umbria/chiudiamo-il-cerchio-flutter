@@ -1,3 +1,4 @@
 class Constants {
-  static const BlogEndpoint = 'https://chiudiamo-il-cerchio.web.app/api/v0/pages/index.json';
+  static const BaseURL = 'https://chiudiamo-il-cerchio.web.app';
+  static const APIEndpoint = '$BaseURL/api/v0';
 }

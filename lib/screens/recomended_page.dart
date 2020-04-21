@@ -1,6 +1,6 @@
+import 'package:chiudiamo_il_cerchio/screens/home.dart';
 import 'package:flutter/material.dart';
 
-import './home_page.dart';
 import '../helpers/courseModel.dart';
 import '../helpers/quad_clipper.dart';
 import '../theme/color/light_color.dart';
@@ -342,7 +342,7 @@ class RecomendedPage extends StatelessWidget {
             _bottomIcons(Icons.person),
           ],
           onTap: (index) {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
           },
         ),
         body: SingleChildScrollView(

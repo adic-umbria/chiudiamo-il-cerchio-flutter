@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 import '../theme/colors.dart';
 import 'components/background_circle.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  static const double widgetHeight = 120.0;
 
   CustomAppBar({@required this.title});
+
+  @override
+  Size get preferredSize => Size.fromHeight(widgetHeight);
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +18,11 @@ class CustomAppBar extends StatelessWidget {
 
     return ClipRRect(
       borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+        bottomLeft: Radius.circular(50),
+        bottomRight: Radius.circular(50),
+      ),
       child: Container(
-          height: 120,
+          height: widgetHeight,
           width: width,
           decoration: BoxDecoration(
             color: ThemeColor.lightGreen,
@@ -60,10 +66,11 @@ class CustomAppBar extends StatelessWidget {
                               child: Text(
                                 title,
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w500),
-                              ))
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              )),
                         ],
                       ))),
             ],

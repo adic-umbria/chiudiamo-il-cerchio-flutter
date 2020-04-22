@@ -14,12 +14,16 @@ class BlogAPI {
 
   /// Fetches `/pages/` endpoint and returns a list of pages.
   Future<List<Page>> fetch() async {
-    final response = await this.httpClient.get('${Constants.APIEndpoint}/pages/index.json');
+    final response =
+        await this.httpClient.get('${Constants.APIEndpoint}/pages/index.json');
     if (response.statusCode != 200) {
-      throw http.ClientException('Client Exception (${response.statusCode}): ${response.body}');
+      throw http.ClientException(
+          'Client Exception (${response.statusCode}): ${response.body}');
     }
 
-    return parsePagesResponse(response.body);
+    // If the server doesn't send `encoding` header, Flutter decodes using
+    // latin-1 instead of utf-8
+    return parsePagesResponse(utf8.decode(response.bodyBytes));
   }
 }
 

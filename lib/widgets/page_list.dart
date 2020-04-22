@@ -4,13 +4,9 @@ import '../models/page.dart';
 import 'page_item.dart';
 
 class PageList extends StatelessWidget {
-  final double width;
   final List<Page> pages;
 
-  PageList({
-    @required this.width,
-    @required this.pages,
-  });
+  PageList({@required this.pages});
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +15,17 @@ class PageList extends StatelessWidget {
       child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: _buildLine(pages, width),
+          children: _buildLines(pages),
         ),
       ),
     );
   }
 }
 
-List<Widget> _buildLine(List<Page> pages, double width) {
+List<Widget> _buildLines(List<Page> pages) {
   List<Widget> lines = [];
   for (var i = 0; i < pages.length; i++) {
     lines.add(PageItem(
-      width: width,
       index: i,
       page: pages[i],
     ));

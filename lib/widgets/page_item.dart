@@ -7,17 +7,16 @@ import 'components/patterns.dart';
 class PageItem extends StatelessWidget {
   final int index;
   final Page page;
-  final double width;
 
   PageItem({
     @required this.page,
     @required this.index,
-    @required this.width,
   });
 
   @override
   Widget build(BuildContext context) {
-    // Compute a random pattern
+    var width = MediaQuery.of(context).size.width;
+    // Create a random pattern
     // TODO: provide a thumbnail and compute a pattern only if empty
     List values = createPattern(index);
     Color primaryColor = values[0];
@@ -33,7 +32,6 @@ class PageItem extends StatelessWidget {
               child: CardPlaceholder(
                 primaryColor: primaryColor,
                 pattern: pattern,
-                width: width,
               ),
             ),
             Expanded(
@@ -74,16 +72,15 @@ class PageItem extends StatelessWidget {
 class CardPlaceholder extends StatelessWidget {
   final Color primaryColor;
   final Widget pattern;
-  final double width;
 
   CardPlaceholder({
     @required this.primaryColor,
     @required this.pattern,
-    @required this.width,
   });
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Container(
         height: 190,
         width: width * .34,
@@ -93,9 +90,10 @@ class CardPlaceholder extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(20)),
             boxShadow: <BoxShadow>[
               BoxShadow(
-                  offset: Offset(0, 5),
-                  blurRadius: 10,
-                  color: Color(0x12000000))
+                offset: Offset(0, 5),
+                blurRadius: 10,
+                color: Color(0x12000000),
+              ),
             ]),
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(20)),

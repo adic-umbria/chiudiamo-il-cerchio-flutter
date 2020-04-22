@@ -13,11 +13,9 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             CustomAppBar(
               title: "Chiudiamo il Cerchio!",
-              width: MediaQuery.of(context).size.width,
             ),
             SizedBox(height: 20),
             PageList(
-              width: MediaQuery.of(context).size.width,
               pages: CourseList.lists,
             ),
           ],

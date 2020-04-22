@@ -5,12 +5,13 @@ import 'components/background_circle.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;
-  final double width;
 
-  CustomAppBar({@required this.title, @required this.width});
+  CustomAppBar({@required this.title});
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+
     return ClipRRect(
       borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(50), bottomRight: Radius.circular(50)),

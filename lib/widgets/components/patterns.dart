@@ -20,11 +20,11 @@ import 'clipper.dart';
 List createPattern(int index) {
   switch (index % 3) {
     case 0:
-      return [ThemeColor.seaBlue, _patternA()];
+      return [ThemeColor.green, _patternA()];
     case 1:
-      return [ThemeColor.darkOrange, _patternB()];
+      return [ThemeColor.darkGreen, _patternB()];
     case 2:
-      return [ThemeColor.lightOrange, _patternC()];
+      return [ThemeColor.green, _patternC()];
     default:
       // Empty pattern
       return [Colors.black, Container()];
@@ -39,7 +39,7 @@ Widget _patternA() {
         left: -85,
         child: CircleAvatar(
           radius: 100,
-          backgroundColor: ThemeColor.darkseaBlue,
+          backgroundColor: ThemeColor.darkGreen,
         ),
       ),
       _decorationCircle(ThemeColor.yellow, 40, 20),
@@ -57,10 +57,10 @@ Widget _patternA() {
         right: -50,
         child: CircleAvatar(
           radius: 60,
-          backgroundColor: ThemeColor.darkseaBlue,
+          backgroundColor: ThemeColor.darkGreen,
           child: CircleAvatar(
             radius: 40,
-            backgroundColor: ThemeColor.seaBlue,
+            backgroundColor: ThemeColor.green,
           ),
         ),
       ),
@@ -76,10 +76,10 @@ Widget _patternB() {
         left: -65,
         child: CircleAvatar(
           radius: 70,
-          backgroundColor: ThemeColor.lightOrange,
+          backgroundColor: ThemeColor.green,
           child: CircleAvatar(
             radius: 30,
-            backgroundColor: ThemeColor.darkOrange,
+            backgroundColor: ThemeColor.darkGreen,
           ),
         ),
       ),

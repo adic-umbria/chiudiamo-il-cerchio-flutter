@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
           height: 120,
           width: width,
           decoration: BoxDecoration(
-            color: ThemeColor.orange,
+            color: ThemeColor.lightGreen,
           ),
           child: Stack(
             fit: StackFit.expand,
@@ -29,14 +29,14 @@ class CustomAppBar extends StatelessWidget {
                   right: -120,
                   child: BackgroundCircle(
                     height: 300,
-                    color: ThemeColor.lightOrange,
+                    color: ThemeColor.green,
                   )),
               Positioned(
                   top: -60,
                   left: -65,
                   child: BackgroundCircle(
                     height: width * .5,
-                    color: ThemeColor.darkOrange,
+                    color: ThemeColor.darkGreen,
                   )),
               Positioned(
                   top: -230,

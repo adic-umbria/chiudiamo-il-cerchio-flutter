@@ -48,7 +48,7 @@ class PageItem extends StatelessWidget {
                       Expanded(
                         child: Text(page.title,
                             style: TextStyle(
-                              color: ThemeColor.purple,
+                              color: ThemeColor.darkGreen,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             )),
@@ -61,7 +61,6 @@ class PageItem extends StatelessWidget {
                   page.description,
                   style: TextStyle(
                     fontSize: 14,
-                    color: ThemeColor.extraDarkPurple,
                   ),
                 ),
                 SizedBox(height: 15),

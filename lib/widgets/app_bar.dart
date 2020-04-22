@@ -17,10 +17,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     var width = MediaQuery.of(context).size.width;
 
     return ClipRRect(
-      borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(50),
-        bottomRight: Radius.circular(50),
-      ),
       child: Container(
           height: widgetHeight,
           width: width,

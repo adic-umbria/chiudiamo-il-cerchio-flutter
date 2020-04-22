@@ -1,5 +1,5 @@
-import 'package:chiudiamo_il_cerchio/models/page.dart';
-import 'package:chiudiamo_il_cerchio/services/blog.dart';
+import '../models/page.dart';
+import '../services/blog.dart';
 
 /// Abstraction that retrieves Pages for UI widgets. It uses
 /// Repository Pattern to abstract from where pages are fetched.

@@ -1,22 +1,50 @@
 import 'package:flutter/material.dart';
 
 import '../models/page.dart';
+import '../resources/pages.dart';
 import 'page_item.dart';
 
-class PageList extends StatelessWidget {
-  final List<Page> pages;
+class PageList extends StatefulWidget {
+  @override
+  _PageListState createState() => _PageListState();
+}
 
-  PageList({@required this.pages});
+class _PageListState extends State<PageList> {
+  // Data source
+  final PagesRepository pagesRepository = PagesRepository();
+  Future<List<Page>> pages;
+
+  @override
+  void initState() {
+    super.initState();
+    pages = pagesRepository.fetch();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: _buildLines(pages),
-        ),
+    return Container(
+      child: FutureBuilder<List<Page>>(
+        future: pages,
+        builder: (context, snapshot) {
+          // By default, show a loading spinner
+          if (!snapshot.hasData) {
+            return Center(
+              child: SizedBox(
+                height: 80,
+                width: 80,
+                child: CircularProgressIndicator(),
+              ),
+            );
+          } else if (snapshot.hasError) {
+            // TODO: handle the reload in case of failure
+            return Text('Load failed: $snapshot.error');
+          }
+          return SingleChildScrollView(
+            child: Column(
+              children: _buildLines(snapshot.data),
+            ),
+          );
+        },
       ),
     );
   }

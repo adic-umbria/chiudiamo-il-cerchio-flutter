@@ -1,4 +1,4 @@
-package com.example.chiudiamo_il_cerchio
+package it.adicumbria.chiudiamo_il_cerchio
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

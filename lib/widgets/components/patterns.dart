@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/color/light_color.dart';
+import '../../theme/colors.dart';
 import 'background_circle.dart';
 import 'clipper.dart';
 
@@ -20,11 +20,11 @@ import 'clipper.dart';
 List createPattern(int index) {
   switch (index % 3) {
     case 0:
-      return [LightColor.seeBlue, _patternA()];
+      return [ThemeColor.seaBlue, _patternA()];
     case 1:
-      return [LightColor.darkOrange, _patternB()];
+      return [ThemeColor.darkOrange, _patternB()];
     case 2:
-      return [LightColor.lightOrange2, _patternC()];
+      return [ThemeColor.lightOrange, _patternC()];
     default:
       // Empty pattern
       return [Colors.black, Container()];
@@ -39,10 +39,10 @@ Widget _patternA() {
         left: -85,
         child: CircleAvatar(
           radius: 100,
-          backgroundColor: LightColor.darkseeBlue,
+          backgroundColor: ThemeColor.darkseaBlue,
         ),
       ),
-      _decorationCircle(LightColor.yellow, 40, 20),
+      _decorationCircle(ThemeColor.yellow, 40, 20),
       Positioned(
         top: -30,
         right: -10,
@@ -57,10 +57,10 @@ Widget _patternA() {
         right: -50,
         child: CircleAvatar(
           radius: 60,
-          backgroundColor: LightColor.darkseeBlue,
+          backgroundColor: ThemeColor.darkseaBlue,
           child: CircleAvatar(
             radius: 40,
-            backgroundColor: LightColor.seeBlue,
+            backgroundColor: ThemeColor.seaBlue,
           ),
         ),
       ),
@@ -76,10 +76,10 @@ Widget _patternB() {
         left: -65,
         child: CircleAvatar(
           radius: 70,
-          backgroundColor: LightColor.lightOrange2,
+          backgroundColor: ThemeColor.lightOrange,
           child: CircleAvatar(
             radius: 30,
-            backgroundColor: LightColor.darkOrange,
+            backgroundColor: ThemeColor.darkOrange,
           ),
         ),
       ),
@@ -87,7 +87,7 @@ Widget _patternB() {
           bottom: -35,
           right: -40,
           child: CircleAvatar(
-            backgroundColor: LightColor.yellow,
+            backgroundColor: ThemeColor.yellow,
             radius: 40,
           )),
       Positioned(
@@ -120,7 +120,7 @@ Widget _patternC() {
           child: ClipRect(
               clipper: Clipper(),
               child: CircleAvatar(
-                backgroundColor: LightColor.yellow,
+                backgroundColor: ThemeColor.yellow,
                 radius: 40,
               ))),
       _decorationCircle(Colors.yellow, 35, 70),

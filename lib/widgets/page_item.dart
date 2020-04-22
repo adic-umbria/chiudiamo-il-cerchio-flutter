@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/page.dart';
-import '../theme/color/light_color.dart';
-import '../theme/theme.dart';
+import '../theme/colors.dart';
 import 'components/patterns.dart';
 
 class PageItem extends StatelessWidget {
@@ -49,19 +48,22 @@ class PageItem extends StatelessWidget {
                       Expanded(
                         child: Text(page.title,
                             style: TextStyle(
-                                color: LightColor.purple,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold)),
+                              color: ThemeColor.purple,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            )),
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: 15),
-                Text(page.description,
-                    style: AppTheme.h6Style.copyWith(
-                      fontSize: 14,
-                      color: LightColor.extraDarkPurple,
-                    )),
+                Text(
+                  page.description,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: ThemeColor.extraDarkPurple,
+                  ),
+                ),
                 SizedBox(height: 15),
               ],
             ))

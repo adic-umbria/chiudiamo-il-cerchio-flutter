@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme/color/light_color.dart';
+import '../theme/colors.dart';
 import 'components/background_circle.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
           height: 120,
           width: width,
           decoration: BoxDecoration(
-            color: LightColor.orange,
+            color: ThemeColor.orange,
           ),
           child: Stack(
             fit: StackFit.expand,
@@ -29,14 +29,14 @@ class CustomAppBar extends StatelessWidget {
                   right: -120,
                   child: BackgroundCircle(
                     height: 300,
-                    color: LightColor.lightOrange2,
+                    color: ThemeColor.lightOrange,
                   )),
               Positioned(
                   top: -60,
                   left: -65,
                   child: BackgroundCircle(
                     height: width * .5,
-                    color: LightColor.darkOrange,
+                    color: ThemeColor.darkOrange,
                   )),
               Positioned(
                   top: -230,

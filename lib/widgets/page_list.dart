@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/page.dart';
 import '../resources/pages.dart';
+import '../screens/viewer.dart';
 import 'page_item.dart';
 
 class PageList extends StatefulWidget {
@@ -41,7 +42,7 @@ class _PageListState extends State<PageList> {
           }
           return SingleChildScrollView(
             child: Column(
-              children: _buildLines(snapshot.data),
+              children: _buildLines(context, snapshot.data),
             ),
           );
         },
@@ -50,12 +51,20 @@ class _PageListState extends State<PageList> {
   }
 }
 
-List<Widget> _buildLines(List<Page> pages) {
+List<Widget> _buildLines(BuildContext context, List<Page> pages) {
   List<Widget> lines = [];
   for (var i = 0; i < pages.length; i++) {
     lines.add(PageItem(
       index: i,
       page: pages[i],
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PageViewer(url: pages[i].permalink),
+          ),
+        );
+      },
     ));
     lines.add(Divider(
       thickness: 1,

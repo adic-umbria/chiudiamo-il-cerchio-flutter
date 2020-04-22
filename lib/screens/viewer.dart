@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import '../widgets/app_bar.dart';
-import '../widgets/page_list.dart';
 
-class HomeScreen extends StatelessWidget {
+class PageViewer extends StatelessWidget {
+  final String url;
+
+  PageViewer({this.url});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'Chiudiamo il cerchio!'),
-      body: PageList(),
+      body: WebView(
+        initialUrl: url,
+      ),
     );
   }
 }

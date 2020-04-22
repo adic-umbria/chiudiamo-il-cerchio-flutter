@@ -28,20 +28,19 @@ class PageItem extends StatelessWidget {
       height: 170,
       width: width - 20,
       child: InkWell(
-          splashColor: ThemeColor.green,
-          // When the user taps the button, show a snackbar.
-          onTap: onTap,
-          child: Row(
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: .7,
-                child: CardPlaceholder(
-                  primaryColor: primaryColor,
-                  pattern: pattern,
-                ),
+        onTap: onTap,
+        splashColor: ThemeColor.green,
+        child: Row(
+          children: <Widget>[
+            AspectRatio(
+              aspectRatio: .7,
+              child: CardPlaceholder(
+                primaryColor: primaryColor,
+                pattern: pattern,
               ),
-              Expanded(
-                  child: Column(
+            ),
+            Expanded(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(height: 15),
@@ -50,12 +49,14 @@ class PageItem extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
                         Expanded(
-                          child: Text(page.title,
-                              style: TextStyle(
-                                color: ThemeColor.darkGreen,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              )),
+                          child: Text(
+                            page.title,
+                            style: TextStyle(
+                              color: ThemeColor.darkGreen,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -69,9 +70,11 @@ class PageItem extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                 ],
-              ))
-            ],
-          )),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

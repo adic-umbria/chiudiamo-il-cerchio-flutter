@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import './background_circle.dart';
 
 class CustomAppBar extends StatelessWidget {
-  // MediaQuery.of(context).size.width
   final String title;
   final double width;
 

@@ -1,7 +1,7 @@
-import 'package:chiudiamo_il_cerchio/theme/color/light_color.dart';
 import 'package:flutter/material.dart';
 
-import './background_circle.dart';
+import '../theme/color/light_color.dart';
+import 'components/background_circle.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;

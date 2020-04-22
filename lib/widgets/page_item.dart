@@ -1,9 +1,9 @@
-import 'package:chiudiamo_il_cerchio/widgets/patterns.dart';
 import 'package:flutter/material.dart';
 
 import '../models/page.dart';
 import '../theme/color/light_color.dart';
 import '../theme/theme.dart';
+import 'components/patterns.dart';
 
 class PageItem extends StatelessWidget {
   final int index;

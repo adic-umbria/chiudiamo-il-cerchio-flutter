@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './background_circle.dart';
-import './clipper.dart';
-import '../theme/color/light_color.dart';
+import '../../theme/color/light_color.dart';
+import 'background_circle.dart';
+import 'clipper.dart';
 
 /// Returns a pattern for a `CardPlaceholder` that contains
 /// a `colorCode` and a `Stack` instance.

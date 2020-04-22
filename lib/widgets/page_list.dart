@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './page_item.dart';
 import '../models/page.dart';
+import 'page_item.dart';
 
 class PageList extends StatelessWidget {
   final double width;

@@ -68,7 +68,6 @@ class PageItem extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
-                  SizedBox(height: 15),
                 ],
               ),
             ),

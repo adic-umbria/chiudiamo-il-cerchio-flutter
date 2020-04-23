@@ -27,8 +27,34 @@ class _PageListState extends State<PageList> {
       child: FutureBuilder<List<Page>>(
         future: pages,
         builder: (context, snapshot) {
-          // By default, show a loading spinner
-          if (!snapshot.hasData) {
+          if (snapshot.hasError) {
+            // Handles retries in case of failures
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Caricamento articoli fallito',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(height: 20),
+                  RaisedButton(
+                    onPressed: () {
+                      // Re-initialize the state
+                      setState(() {
+                        pages = pagesRepository.fetch();
+                      });
+                    },
+                    child: Text(
+                      'Riprova',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          } else if (!snapshot.hasData) {
+            // Show a loading spinner
             return Center(
               child: SizedBox(
                 height: 80,
@@ -36,15 +62,14 @@ class _PageListState extends State<PageList> {
                 child: CircularProgressIndicator(),
               ),
             );
-          } else if (snapshot.hasError) {
-            // TODO: handle the reload in case of failure
-            return Text('Load failed: $snapshot.error');
+          } else {
+            // Populate `PageList` with data
+            return SingleChildScrollView(
+              child: Column(
+                children: _buildLines(context, snapshot.data),
+              ),
+            );
           }
-          return SingleChildScrollView(
-            child: Column(
-              children: _buildLines(context, snapshot.data),
-            ),
-          );
         },
       ),
     );

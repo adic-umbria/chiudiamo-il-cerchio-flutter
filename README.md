@@ -1,5 +1,9 @@
-# chiudiamo-il-cerchio-flutter
-Android (Flutter) applications that fetches data from a REST API
+# Chiudiamo il Cerchio!
+
+Flutter application (Android only) that fetches data from a Blog API. It includes news and
+other items related to "Chiudiamo il Cerchio!" public project.
+
+<a href='https://play.google.com/store/apps/details?id=it.adicumbria.chiudiamo_il_cerchio&gl=IT&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img height=50 alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
 
 # Credits
 
